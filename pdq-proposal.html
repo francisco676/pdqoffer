@@ -1,0 +1,846 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>RallyUp x Pretty Damn Quick — The 90-Day Executive Audience Builder</title>
+<meta name="description" content="A 90-day program to make Avi, Roni, and Zach impossible to ignore on LinkedIn." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --blue:#3d68f5;
+    --blue-dark:#2a3ad8;
+    --yellow:#DDFF4D;
+    --ink:#0b1020;
+    --gray:#6b7280;
+    --bg:#ffffff;
+    --bg-soft:#f7f8fb;
+    --line:#e7e9ef;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+    font-feature-settings:"ss01","cv11";
+  }
+  ::selection{background:var(--yellow);color:var(--ink)}
+
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px}
+
+  header.top{
+    padding:32px 0 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .brand{
+    font-weight:800;font-size:18px;letter-spacing:-0.02em;
+    color:var(--ink);
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .brand .dot{
+    width:8px;height:8px;border-radius:999px;background:var(--blue);
+    box-shadow:0 0 0 4px rgba(61,104,245,.12);
+  }
+  .meta{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--gray);
+  }
+
+  .program-tag{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:6px 14px;
+    border-radius:999px;
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink);
+    font-weight:500;
+    margin-bottom:18px;
+  }
+  .program-tag::before{
+    content:"";width:6px;height:6px;border-radius:999px;background:var(--blue);
+  }
+
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--blue);
+    display:inline-flex;align-items:center;gap:8px;
+    margin-bottom:18px;
+  }
+  .eyebrow::before{
+    content:"";width:18px;height:1px;background:var(--blue);display:inline-block;
+  }
+
+  .hero{padding:40px 0 64px;border-bottom:1px solid var(--line);position:relative}
+  h1{
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:clamp(40px,6.4vw,76px);
+    line-height:1.02;
+    letter-spacing:-0.04em;
+    color:var(--blue-dark);
+    margin:0 0 28px;
+  }
+  h1 em, .em{
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-weight:400;
+    color:var(--ink);
+    background:linear-gradient(180deg,transparent 65%,var(--yellow) 65%,var(--yellow) 92%,transparent 92%);
+    padding:0 .04em;
+  }
+  .lede{
+    font-size:20px;color:var(--ink);max-width:680px;
+    line-height:1.5;font-weight:400;
+  }
+  .lede .soft{color:var(--gray);display:block;margin-top:14px;font-size:18px;}
+  .lede .soft em, .lede .soft .em{
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-weight:400;
+    color:var(--ink);
+  }
+
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 22px;border-radius:999px;
+    font-weight:600;font-size:15px;letter-spacing:-0.005em;
+    text-decoration:none;transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    cursor:pointer;border:none;
+  }
+  .btn-primary{
+    background:var(--ink);color:#fff;
+    box-shadow:0 1px 0 rgba(0,0,0,.04), 0 8px 24px -10px rgba(11,16,32,.4);
+  }
+  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 1px 0 rgba(0,0,0,.04), 0 14px 30px -12px rgba(11,16,32,.5)}
+  .btn .arrow{transition:transform .15s ease}
+  .btn:hover .arrow{transform:translateX(3px)}
+
+  section{padding:80px 0;border-bottom:1px solid var(--line)}
+  h2{
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:clamp(30px,4vw,46px);
+    line-height:1.06;
+    letter-spacing:-0.03em;
+    color:var(--blue-dark);
+    margin:0 0 24px;
+    max-width:780px;
+  }
+  h2 em, h2 .em{
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-weight:400;
+    color:var(--ink);
+    background:linear-gradient(180deg,transparent 65%,var(--yellow) 65%,var(--yellow) 92%,transparent 92%);
+    padding:0 .04em;
+  }
+  p.body{font-size:17px;color:var(--ink);max-width:680px;line-height:1.6}
+  p.body + p.body{margin-top:16px}
+  p.body .soft{color:var(--gray)}
+  p.body strong{font-weight:700;color:var(--ink)}
+  p.body em{
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-weight:400;
+  }
+
+  /* Dream outcome: indented quote-style paragraph */
+  .dream-block{
+    margin-top:32px;
+    padding:28px 32px;
+    border-left:3px solid var(--yellow);
+    background:var(--bg-soft);
+    border-radius:0 16px 16px 0;
+    max-width:720px;
+  }
+  .dream-block p{
+    margin:0;
+    font-size:18px;
+    line-height:1.6;
+    color:var(--ink);
+  }
+  .dream-block p + p{margin-top:14px}
+  .dream-block em{
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-weight:400;
+  }
+
+  .compare{
+    margin-top:48px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .compare > div{
+    padding:32px 0;
+  }
+  .compare .col-left{
+    padding-right:32px;
+    border-right:1px solid var(--line);
+  }
+  .compare .col-right{
+    padding-left:32px;
+  }
+  .compare .label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gray);margin-bottom:18px;
+  }
+  .compare .col-right .label{color:var(--blue)}
+  .compare .item{
+    font-size:18px;font-weight:600;letter-spacing:-0.015em;
+    color:var(--ink);
+    padding:10px 0;
+    display:flex;align-items:center;gap:10px;
+  }
+  .compare .col-left .item{
+    color:var(--gray);
+    text-decoration:line-through;
+    text-decoration-thickness:1px;
+    text-decoration-color:var(--gray);
+  }
+  .compare .col-right .item::before{
+    content:"";width:7px;height:7px;border-radius:999px;background:var(--blue);flex-shrink:0;
+  }
+  @media (max-width:680px){
+    .compare{grid-template-columns:1fr}
+    .compare .col-left{padding-right:0;border-right:none;border-bottom:1px solid var(--line)}
+    .compare .col-right{padding-left:0}
+  }
+
+  /* Timeline */
+  .timeline{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:16px;
+    position:relative;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    top:18px;left:0;right:0;
+    height:1px;background:var(--line);
+    z-index:0;
+  }
+  .milestone{
+    position:relative;
+    padding:48px 18px 24px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:18px;
+    z-index:1;
+  }
+  .milestone .dot{
+    position:absolute;top:11px;left:50%;transform:translateX(-50%);
+    width:14px;height:14px;border-radius:999px;
+    background:var(--blue);
+    box-shadow:0 0 0 4px #fff, 0 0 0 5px var(--line);
+  }
+  .milestone.featured .dot{
+    background:var(--ink);
+    box-shadow:0 0 0 4px #fff, 0 0 0 5px var(--ink);
+  }
+  .milestone .when{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--blue);
+    margin-bottom:10px;
+    text-align:center;
+  }
+  .milestone.featured .when{color:var(--ink)}
+  .milestone h4{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:16px;
+    letter-spacing:-0.01em;
+    color:var(--ink);
+    margin:0 0 8px;
+    text-align:center;
+    line-height:1.25;
+  }
+  .milestone p{
+    margin:0;font-size:13px;color:var(--gray);line-height:1.5;text-align:center;
+  }
+  @media (max-width:680px){
+    .timeline{grid-template-columns:1fr;gap:12px}
+    .timeline::before{display:none}
+    .milestone{padding:24px 20px 22px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;text-align:left}
+    .milestone .dot{position:static;transform:none;box-shadow:0 0 0 3px var(--bg-soft);margin-top:6px}
+    .milestone .when, .milestone h4, .milestone p{text-align:left}
+    .milestone .when{grid-column:2;margin-bottom:4px}
+    .milestone h4{grid-column:2}
+    .milestone p{grid-column:2}
+  }
+
+  /* Proof block */
+  .proof{
+    background:var(--bg-soft);
+    border-radius:24px;
+    padding:48px 40px;
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:48px;
+    align-items:center;
+  }
+  .proof .stat{
+    font-family:'Inter',sans-serif;
+    font-weight:900;
+    font-size:clamp(48px,7vw,84px);
+    letter-spacing:-0.04em;
+    line-height:1;
+    color:var(--blue-dark);
+    white-space:nowrap;
+  }
+  .proof .stat .arrow{
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-weight:400;
+    color:var(--ink);
+    margin:0 8px;
+  }
+  .proof .stat .big{
+    background:linear-gradient(180deg,transparent 70%,var(--yellow) 70%,var(--yellow) 92%,transparent 92%);
+    padding:0 .04em;
+  }
+  .proof .caption{font-size:16px;color:var(--ink);line-height:1.55}
+  .proof .caption .label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--gray);display:block;margin-bottom:10px;
+  }
+  .proof .caption .footnote{
+    display:block;margin-top:12px;font-size:13px;color:var(--gray);
+  }
+  @media (max-width:680px){
+    .proof{grid-template-columns:1fr;gap:20px;padding:32px 24px}
+    .proof .stat{font-size:48px;white-space:normal}
+  }
+
+  /* Testimonial */
+  .testimonial{
+    margin-top:32px;
+    padding:36px 40px;
+    background:#fff;
+    border:1px solid var(--ink);
+    border-radius:24px;
+    max-width:720px;
+    position:relative;
+  }
+  .testimonial .mark{
+    position:absolute;
+    top:-14px;left:32px;
+    background:var(--yellow);
+    color:var(--ink);
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-size:36px;font-weight:400;
+    width:48px;height:48px;border-radius:999px;
+    display:flex;align-items:center;justify-content:center;
+    line-height:1;
+    padding-bottom:8px;
+  }
+  .testimonial blockquote{
+    margin:0 0 20px;
+    font-family:'Inter',sans-serif;
+    font-size:22px;
+    font-weight:500;
+    line-height:1.4;
+    color:var(--ink);
+    letter-spacing:-0.015em;
+  }
+  .testimonial blockquote em{
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-weight:400;
+  }
+  .testimonial cite{
+    font-style:normal;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gray);
+  }
+  @media (max-width:680px){
+    .testimonial{padding:28px 24px}
+    .testimonial blockquote{font-size:18px}
+  }
+
+  /* Pricing cards */
+  .pricing{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:40px;
+  }
+  .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:24px;
+    padding:36px 32px;
+    display:flex;flex-direction:column;
+    position:relative;
+    transition:border-color .2s ease;
+  }
+  .card:hover{border-color:var(--ink)}
+  .card.featured{
+    border-color:var(--ink);
+    box-shadow:0 1px 0 rgba(0,0,0,.04), 0 24px 48px -28px rgba(11,16,32,.25);
+  }
+  .card.featured::before{
+    content:"Recommended";
+    position:absolute;top:-11px;left:32px;
+    background:var(--yellow);
+    color:var(--ink);
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    padding:4px 10px;border-radius:999px;
+    font-weight:500;
+  }
+  .card .tier{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gray);margin-bottom:14px;
+  }
+  .card .name{
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:26px;
+    letter-spacing:-0.02em;
+    color:var(--blue-dark);
+    margin:0 0 6px;
+    line-height:1.2;
+  }
+  .card .name em, .card .name .em{
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-weight:400;
+    color:var(--ink);
+    background:linear-gradient(180deg,transparent 65%,var(--yellow) 65%,var(--yellow) 92%,transparent 92%);
+    padding:0 .04em;
+  }
+  .card .for{
+    font-size:14px;color:var(--gray);margin-bottom:24px;line-height:1.45;
+  }
+  .card .price{
+    display:flex;align-items:baseline;gap:8px;margin-bottom:6px;
+  }
+  .card .price .num{
+    font-family:'Inter',sans-serif;
+    font-weight:800;
+    font-size:44px;
+    letter-spacing:-0.03em;
+    color:var(--ink);
+  }
+  .card .price .unit{
+    font-size:14px;color:var(--gray);
+  }
+  .card .term{
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--gray);margin-bottom:24px;
+  }
+  .card .guarantee-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--yellow);
+    color:var(--ink);
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    font-weight:500;
+    padding:6px 12px;border-radius:999px;
+    align-self:flex-start;
+    margin-bottom:24px;
+  }
+  .card .what-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gray);margin-bottom:12px;
+    padding-top:0;
+  }
+  .card .also-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--blue);margin:24px 0 12px;
+    padding-top:20px;
+    border-top:1px dashed var(--line);
+  }
+  .card ul{
+    list-style:none;padding:0;margin:0;
+    display:flex;flex-direction:column;gap:12px;
+  }
+  .card li{
+    font-size:15px;color:var(--ink);line-height:1.45;
+    padding-left:22px;position:relative;
+  }
+  .card li::before{
+    content:"";position:absolute;left:0;top:8px;
+    width:7px;height:7px;border-radius:999px;background:var(--blue);
+  }
+  .card ul.also li::before{
+    background:transparent;
+    border:1.5px solid var(--blue);
+    width:6px;height:6px;
+    top:9px;
+  }
+  @media (max-width:680px){
+    .pricing{grid-template-columns:1fr}
+  }
+
+  /* Honest list */
+  .honest-list{
+    margin-top:40px;
+    display:flex;flex-direction:column;gap:0;
+  }
+  .honest-item{
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:24px;
+    padding:28px 0;
+    border-top:1px solid var(--line);
+  }
+  .honest-item:last-child{border-bottom:1px solid var(--line)}
+  .honest-item .num{
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:48px;
+    line-height:1;
+    color:var(--blue);
+    letter-spacing:-0.02em;
+  }
+  .honest-item h3{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:20px;
+    letter-spacing:-0.015em;
+    color:var(--ink);
+    margin:0 0 8px;
+    line-height:1.3;
+  }
+  .honest-item h3 em, .honest-item h3 .em{
+    font-family:'Instrument Serif',serif;
+    font-style:italic;
+    font-weight:400;
+    background:linear-gradient(180deg,transparent 65%,var(--yellow) 65%,var(--yellow) 92%,transparent 92%);
+    padding:0 .04em;
+  }
+  .honest-item p{
+    margin:0;font-size:16px;color:var(--gray);line-height:1.55;max-width:620px;
+  }
+  @media (max-width:680px){
+    .honest-item{grid-template-columns:1fr;gap:8px}
+    .honest-item .num{font-size:36px}
+  }
+
+  .final{
+    padding:96px 0 80px;
+    text-align:left;
+    border-bottom:none;
+  }
+  .final h2{margin-bottom:28px;max-width:780px}
+  .final .meta{margin-top:24px}
+
+  footer{
+    padding:40px 0 60px;
+    border-top:1px solid var(--line);
+    display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--gray);
+  }
+  footer a{color:var(--gray);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+  footer a:hover{color:var(--ink);border-color:var(--ink)}
+
+  @keyframes rise{
+    from{opacity:0;transform:translateY(10px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+  .hero .program-tag, .hero .eyebrow, .hero h1, .hero .lede, .hero .cta-row{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+  .hero .eyebrow{animation-delay:.04s}
+  .hero h1{animation-delay:.09s}
+  .hero .lede{animation-delay:.17s}
+  .hero .cta-row{animation-delay:.25s}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span class="dot"></span>RallyUp</div>
+    <div class="meta">Proposal · Pretty Damn Quick · Q2 2026</div>
+  </header>
+</div>
+
+<div class="wrap">
+  <section class="hero">
+    <div class="program-tag">The 90-Day Executive Audience Builder</div>
+    <div class="eyebrow">Prepared for Avi, Roni, and the PDQ team</div>
+    <h1>You're growing. <em>Today is the right moment</em> to be in LinkedIn.</h1>
+    <p class="lede">You already believe in this. The question on the call wasn't whether LinkedIn matters, it was whether right now, with this quarter's budget, this is the most useful thing PDQ can do.
+      <span class="soft">We built this around that question.</span>
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#offer">See the offer <span class="arrow">→</span></a>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="eyebrow">What we heard on the call</div>
+    <h2>The team is growing. The budget is tight. <em>Both things are true</em>.</h2>
+    <p class="body">You're hiring a Head of Sales. Roni just joined as Head of Growth. You're targeting brands doing $5M to $100M in e-commerce, and a lot of them already know PDQ from LinkedIn before they ever get on a call. That part is working.</p>
+    <p class="body">What you said you needed: something cost-effective, with results in the short-term, that doesn't take from what's already committed this quarter. <strong>That's what we tried to build below.</strong> Not the biggest version of what we could sell you. The version that fits where you are right now.</p>
+  </section>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="eyebrow">The picture</div>
+    <h2>Twelve months from now, here's <em>what changed</em>.</h2>
+    <p class="body">We don't sell a number. We sell what the number lets you do. Here's what life looks like once Avi, Roni, and Zach own their corner of e-commerce LinkedIn:</p>
+
+    <div class="dream-block">
+      <p>A Series B DTC brand doing $30M ARR posts a question about cart abandonment. <em>Avi answers it.</em> Three days later, their VP of Growth DMs him directly. By the time the call happens, they already know what fast checkout means at PDQ, because they read about it last week.</p>
+      <p>Your sales reps stop hearing <em>"who is PDQ?"</em> on discovery calls. They start hearing <em>"oh yeah, I follow Avi on LinkedIn."</em></p>
+      <p>When operators in the niche talk about checkout speed, your name comes up unprompted. You stop being one of the options. <em>You become the obvious one.</em></p>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="eyebrow">Why now</div>
+    <h2>Ads die. SEO dies. <em>Audiences compound</em>.</h2>
+    <p class="body">Every other channel PDQ could spend on is being commoditized by AI. Ad costs rise as platforms get smarter. SEO gets eaten by AI overviews. Cold outreach gets filtered before it lands. Anything a competitor can copy with a credit card and ChatGPT, they will.</p>
+    <p class="body">The one channel that doesn't degrade is a real audience of e-commerce operators who recognize Avi as the voice on fast checkout. That audience compounds every month. <strong>It's the only marketing asset in the next decade that can't be replicated.</strong></p>
+
+    <div class="compare">
+      <div class="col-left">
+        <div class="label">Replicable by AI</div>
+        <div class="item">Paid ads</div>
+        <div class="item">SEO content farms</div>
+        <div class="item">Cold outbound</div>
+        <div class="item">Templated agencies</div>
+      </div>
+      <div class="col-right">
+        <div class="label">Not replicable</div>
+        <div class="item">Avi's audience</div>
+        <div class="item">Roni's audience</div>
+        <div class="item">Zach's audience</div>
+        <div class="item">PDQ's brand gravity</div>
+      </div>
+    </div>
+
+    <p class="body" style="margin-top:32px">Building this audience is the most valuable thing PDQ's executives can do in the next 12 months. The second most valuable thing is starting now instead of next quarter.</p>
+  </section>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="eyebrow">How we work</div>
+    <h2>We're not ghostwriters. We're <em>audience builders</em>.</h2>
+    <p class="body">Posting is the mechanic. It isn't the purpose. Plenty of accounts post every day and never grow. Handing it to a CMO who hands it to AI gets you words on a page, not an audience.</p>
+    <p class="body">The work is identifying what your ICP actually clicks on, mapping the operators Avi needs to be visible to, and engineering each post so it ends up in their feed. The posts are the output. The followers are the asset. <span class="soft">3 posts per exec per week, delivered in Slack, 5 minutes to approve.</span></p>
+  </section>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="eyebrow">What 90 days actually looks like</div>
+    <h2>Week 1, you're <em>already live</em>.</h2>
+    <p class="body">No three-week onboarding. No long ramp before anything ships. Here's what happens, in order, with no surprises.</p>
+
+    <div class="timeline">
+      <div class="milestone">
+        <div class="dot"></div>
+        <div class="when">Week 1</div>
+        <h4>First posts go live</h4>
+        <p>Onboarding, context graph build, audit. First post on each profile by end of week.</p>
+      </div>
+      <div class="milestone">
+        <div class="dot"></div>
+        <div class="when">Week 4</div>
+        <h4>First lift visible</h4>
+        <p>Significant impressions lift. ICP follower growth becoming measurable. First end-of-month digest delivered.</p>
+      </div>
+      <div class="milestone">
+        <div class="dot"></div>
+        <div class="when">Week 8</div>
+        <h4>Compounding kicks in</h4>
+        <p>Each post hits more people than the last. Your execs start being recognized inside the niche.</p>
+      </div>
+      <div class="milestone featured">
+        <div class="dot"></div>
+        <div class="when">Week 12</div>
+        <h4>5x threshold on track</h4>
+        <p>Either you're at the 5x guarantee, or we keep working until you are. No exceptions.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="eyebrow">The receipt</div>
+    <h2>What we did for PandaDoc's CEO, in <em>35 days</em>.</h2>
+    <div class="proof">
+      <div class="stat"><span>2,500</span><span class="arrow">→</span><span class="big">90,000</span></div>
+      <div class="caption">
+        <span class="label">Monthly impressions, CEO profile</span>
+        A 36x lift. Inbound conversations went from a trickle to consistent. Conference invites. Partnership inquiries. The kind of surface area you can't buy with ads.
+        <span class="footnote">Our 5x guarantee for PDQ is set well below what we've actually delivered. It's the floor, not the ceiling.</span>
+      </div>
+    </div>
+
+    <div class="testimonial">
+      <div class="mark">"</div>
+      <blockquote>
+        My first RallyUp post generated a <em>HUGE surge of impressions</em> (27k and counting).
+      </blockquote>
+      <cite>CEO, PandaDoc</cite>
+    </div>
+  </section>
+</div>
+
+<div class="wrap" id="offer">
+  <section>
+    <div class="eyebrow">The offer</div>
+    <h2>Two ways to start. <em>Both come with the guarantee</em>.</h2>
+    <p class="body">We'll 5x your impressions in 90 days, or we keep working for free until we do. Flat pricing. No setup fees. We onboard within a week. <span class="soft">After 90 days, no strings. Continuation moves to an annual contract, or we shake hands and walk away.</span></p>
+
+    <div class="pricing">
+      <div class="card">
+        <div class="tier">Tier 1 · Lead with the CEO</div>
+        <h3 class="name"><em>Avi</em></h3>
+        <div class="for">Fastest path to traction. Cleanest proof point.</div>
+        <div class="price">
+          <span class="num">$5,000</span>
+          <span class="unit">flat</span>
+        </div>
+        <div class="term">Over 3 months</div>
+        <div class="guarantee-badge">5x or free</div>
+
+        <div class="what-label">Core deliverables</div>
+        <ul>
+          <li>3 fully managed posts per week</li>
+          <li>Weekly Slack delivery, 5 minutes to approve</li>
+          <li>Monthly intake call, ongoing context channel</li>
+          <li>End-of-month engagement and follower digest</li>
+          <li>Full content ops team, AI context graph, no extras to buy</li>
+        </ul>
+
+        <div class="also-label">Also included, no extra charge</div>
+        <ul class="also">
+          <li>Personal Brand Audit (deep voice analysis and content gap map, week 1)</li>
+          <li>Context Graph build (your stories, wins, and voice, structured for AI use)</li>
+          <li>Competitor LinkedIn analysis (how your nearest rivals show up, and how Avi can outflank them)</li>
+          <li>End-of-Month Strategy Review with Alec (live tweaks to direction)</li>
+        </ul>
+      </div>
+
+      <div class="card featured">
+        <div class="tier">Tier 2 · The leadership trio</div>
+        <h3 class="name"><em>Avi, Roni, and Zach</em></h3>
+        <div class="for">Three voices, one coordinated narrative. $1,111 per exec, per month.</div>
+        <div class="price">
+          <span class="num">$10,000</span>
+          <span class="unit">flat</span>
+        </div>
+        <div class="term">Over 3 months</div>
+        <div class="guarantee-badge">5x or free, on each exec</div>
+
+        <div class="what-label">Core deliverables, per exec</div>
+        <ul>
+          <li>3 fully managed posts per week, per exec</li>
+          <li>Weekly Slack delivery, 5 minutes to approve</li>
+          <li>Monthly intake call, ongoing context channel</li>
+          <li>End-of-month engagement and follower digest</li>
+          <li>Full content ops team, AI context graph, no extras to buy</li>
+        </ul>
+
+        <div class="also-label">Also included, no extra charge</div>
+        <ul class="also">
+          <li>Personal Brand Audit per exec (deep voice analysis and content gap map, week 1)</li>
+          <li>Context Graph build per exec (stories, wins, voice, structured for AI use)</li>
+          <li>Competitor LinkedIn analysis (how your nearest rivals show up, and how each exec can outflank them)</li>
+          <li>End-of-Month Strategy Review with Alec (cross-exec narrative tweaks)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section>
+    <div class="eyebrow">What's guaranteed. What isn't.</div>
+    <h2>The part most agencies <em>bury in the contract</em>.</h2>
+    <p class="body">We'd rather lose the deal than mis-set the expectation. Four things you should know before signing.</p>
+
+    <div class="honest-list">
+      <div class="honest-item">
+        <div class="num">01</div>
+        <div>
+          <h3>This is an investment. <em>Not a campaign</em>.</h3>
+          <p>The audience you build doesn't stop working when the engagement ends. It compounds for years after. That's the long horizon, and it's where the real value lives. What you'll see inside 90 days is significant, measurable uptake on impressions, follower growth, and ICP relevance. Enough to feel it. Enough that the guarantee makes sense. The compounding is the gift that keeps giving.</p>
+        </div>
+      </div>
+
+      <div class="honest-item">
+        <div class="num">02</div>
+        <div>
+          <h3>The 5x is on <em>impressions</em>, not pipeline.</h3>
+          <p>Impressions, follower growth, and ICP relevance are the metrics we own and guarantee. Closed pipeline takes 6 to 12 months minimum and depends on what your sales team does with the surface area we create. Anyone telling you they can guarantee pipeline in 90 days is selling you something that doesn't exist.</p>
+        </div>
+      </div>
+
+      <div class="honest-item">
+        <div class="num">03</div>
+        <div>
+          <h3>After 90 days, <em>no strings</em>.</h3>
+          <p>If it's working, continuation moves to an annual contract. If it isn't, we don't fight to keep you. You keep every post, every piece of context we built around your execs, and the playbook for running it in-house.</p>
+        </div>
+      </div>
+
+      <div class="honest-item">
+        <div class="num">04</div>
+        <div>
+          <h3>Attribution is <em>partly on you</em>.</h3>
+          <p>Until the LinkedIn integration layer catches up, the cleanest signal is your sales team asking "how did you hear about us." We'll deliver leading indicators every month. You close the loop on revenue. It's the honest answer, not a clever one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="wrap">
+  <section class="final">
+    <div class="eyebrow">Next step</div>
+    <h2>Pick a start date. <em>We onboard within a week</em>.</h2>
+    <p class="body">Reply with the green light, or reply with questions and we'll get on a 20-minute call. Either way, the answer comes back same day.</p>
+    <div class="meta">Prepared by Alec Kremins, CEO, RallyUp</div>
+  </section>
+</div>
+
+<div class="wrap">
+  <footer>
+    <div>RallyUp · The 90-Day Executive Audience Builder</div>
+    <div><a href="https://www.rallyup.team" target="_blank" rel="noopener">rallyup.team</a></div>
+  </footer>
+</div>
+
+</body>
+</html>
